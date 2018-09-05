@@ -1,0 +1,227 @@
+//
+//  EveryDayBenefitSale.pch
+//  EveryDayBenefitSale
+//
+//  Created by 邱 德政 on 16/8/25.
+//  Copyright © 2016年 济南联祥技术有限公司. All rights reserved.
+//
+
+#ifndef EveryDayBenefitSale_pch
+#define EveryDayBenefitSale_pch
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIViewExt.h"
+#import "IQKeyboardManager.h"
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "DataPost.h"
+#import "Masonry.h"
+#import "AFNetworking.h"
+#import "UIColor+expanded.h"
+#import "MJRefresh.h"
+#import "Command.h"
+
+#endif
+//
+//#define REQUEST_All_city_list  @"all_city_list"
+//
+#ifdef DEBUG
+//#define NSLog(...) NSLog(__VA_ARGS__)
+//#define debugMethod() NSLog(@"%s", __func__)
+//#else
+//#define NSLog(...)
+//#define debugMethod()
+
+#endif
+//
+
+//
+#define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
+#define kString(string) [NSString stringWithFormat:@"%@",string]
+
+#define ScreenWidth self.view.frame.size.width
+#define mScreenWidth [UIScreen mainScreen].bounds.size.width//设备宽
+#define kDeviceFrame [UIScreen mainScreen].bounds//设备坐标
+#define StatusBarStyle UIStatusBarStyleLightContent
+#define mScreenHeight [UIScreen mainScreen].bounds.size.height//设备高
+#define APPDelegate [UIApplication sharedApplication].delegate
+#define COLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+#define NavBarItemColor [UIColor orangeColor]
+#define BackGorundColor [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1]
+#define LineColor [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1]
+#define GrayTitleColor [UIColor colorWithRed:163/255.0 green:163/255.0 blue:163/255.0 alpha:1]
+#define MyAleartColor [UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:0.5]
+#define NLSystemVersionGreaterOrEqualThan(version) ([[[UIDevice currentDevice] systemVersion] floatValue] >= version)
+#define IOS7 NLSystemVersionGreaterOrEqualThan(7.0)
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+#define HightRuler (kDevice_Is_iPhone5 ? 1.0 : (kDevice_Is_iPhone6 ? 1.172 : (kDevice_Is_iPhone6Plus ? 1.2938 : (kDevice_Is_iPhone4s ? 1.0 : 1.171) ) ) )
+
+#define kDevice_Is_iPhone4s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1080, 1920), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+#define PCMTextFont14 [UIFont systemFontOfSize:14.0]
+#define PCMTextFont15 [UIFont systemFontOfSize:15.0]
+//
+//
+//#define BackColor [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1]
+//
+//
+//
+//#if __IPHONE_6_0 // iOS6 and later
+//
+//#   define kTextAlignmentCenter    NSTextAlignmentCenter
+//#   define kTextAlignmentLeft      NSTextAlignmentLeft
+//#   define kTextAlignmentRight     NSTextAlignmentRight
+//
+//#   define kTextLineBreakByWordWrapping      NSLineBreakByWordWrapping
+//#   define kTextLineBreakByCharWrapping      NSLineBreakByCharWrapping
+//#   define kTextLineBreakByClipping          NSLineBreakByClipping
+//#   define kTextLineBreakByTruncatingHead    NSLineBreakByTruncatingHead
+//#   define kTextLineBreakByTruncatingTail    NSLineBreakByTruncatingTail
+//#   define kTextLineBreakByTruncatingMiddle  NSLineBreakByTruncatingMiddle
+//
+//#else // older versions
+//
+//#   define kTextAlignmentCenter    UITextAlignmentCenter
+//#   define kTextAlignmentLeft      UITextAlignmentLeft
+//#   define kTextAlignmentRight     UITextAlignmentRight
+//
+//#   define kTextLineBreakByWordWrapping       UILineBreakModeWordWrap
+//#   define kTextLineBreakByCharWrapping       UILineBreakModeCharacterWrap
+//#   define kTextLineBreakByClipping           UILineBreakModeClip
+//#   define kTextLineBreakByTruncatingHead     UILineBreakModeHeadTruncation
+//#   define kTextLineBreakByTruncatingTail     UILineBreakModeTailTruncation
+//#   define kTextLineBreakByTruncatingMiddle   UILineBreakModeMiddleTruncation
+//
+//#endif
+//
+//#define kUIButton(rect,title,igName,view) UIButton *yzxButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];yzxButton.frame = rect;[yzxButton setTitle:title forState:UIControlStateNormal];[yzxButton setBackgroundImage:[UIImage imageNamed:igName] forState:UIControlStateNormal];[view addSubview:yzxButton];
+//
+//#define kUIImage(rect, igName,view) UIImageView *yzxIg = [[UIImageView alloc] initWithFrame:rect];yzxIg.image = [UIImage imageNamed:igName];[view addSubview:yzxIg];
+//
+//#define kUILabel(rect, textt,colorr,anlement,ziTiDaXiao,view) UILabel *yzxLabel=[[UILabel alloc] initWithFrame:rect];yzxLabel.text=textt;yzxLabel.font=[UIFont systemFontOfSize:ziTiDaXiao];yzxLabel.textAlignment=anlement;yzxLabel.textColor=colorr;[view addSubview:yzxLabel];
+//#define kViewBackColor(red,gre,blu,alphe) self.view.backgroundColor = [UIColor colorWithRed:red/255.0 green:gre/255.0 blue:blu/255.0 alpha:alphe];
+//
+//
+//
+//
+//#define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)?YES:NO
+//#define kIgWidth SCREEN_SIZE.width
+//#define kApp ((AppDelegate*)([UIApplication sharedApplication].delegate))
+///**
+// * 默认设置
+// */
+//
+//#define KAppid @"1"
+//#define KSystem @"ios"
+//
+//#define StatusBarStyle UIStatusBarStyleLightContent
+//
+//#define StateBarHeight ((IS_IOS_7)?20:0)
+//
+//#define NavBarHeight ((IS_IOS_7)?65:45)
+//
+//#define BottomHeight ((IS_IOS_7)?49:0)
+//
+//#define ScreenHeight ((IS_IOS_7)?([UIScreen mainScreen].bounds.size.height):([UIScreen mainScreen].bounds.size.height - 20))
+//#define kyangScreen ((IS_IOS_7)?([UIScreen mainScreen].bounds.size.height):([UIScreen mainScreen].bounds.size.height - 20))-self.tabBarController.tabBar.frame.size.height
+//
+//#define ConentViewWidth  [UIScreen mainScreen].bounds.size.width
+//
+//#define ConentViewHeight ((IS_IOS_7)?([UIScreen mainScreen].bounds.size.height - NavBarHeight):([UIScreen mainScreen].bounds.size.height - NavBarHeight -20))
+//
+//#define ConentViewFrame CGRectMake(0,NavBarHeight,ConentViewWidth,ConentViewHeight)
+//
+//#define MaskViewDefaultFrame CGRectMake(0,NavBarHeight,ConentViewWidth,ConentViewHeight)
+//#define knslog(infor) NSLog(@"infor=%@\nseccess=%@\nmesg=%@",infor,[infor objectForKey:@"success"],[infor objectForKey:@"msg"]);
+//
+//#define knslogyang(dic) NSLog(@"dic=%@",dic);
+//#define DXConst_Chat_ID @"dx_chat_id"
+//#define DXConst_Chat_PWD @"dx_chat_pwd"
+//#define DXConst_Chat_Server @"dx_chat_server"
+//
+//#define DX_ISIPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//#define DX_ISIOS7 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0//是不是ios7
+//
+//#define DX_UI_ViewHeight (DX_ISIPHONE5?504.0f:416.0f)//带navigationbar View 的高度
+//#define IOSCOUNT [[[UIDevice currentDevice] systemVersion] floatValue]
+//#define kTabarSize 20//商城tarbar图片高度
+//
+//#define kUserShangChengToken [[NSUserDefaults standardUserDefaults]objectForKey:@"shangChengTokenYang"]//登录商城返回token
+//#define kUserId [[[XtomManager sharedManager]motherInfor]objectForKey:@"id"]//用户的id
+//
+////下拉刷新
+//#define kguoliSuaxinJiazai(tableview) -(void)setupRefresh{[tableview addFooterWithTarget:self action:@selector(footerRereshing)];tableview.footerPullToRefreshText = @"上拉可以加载更多数据了";tableview.footerReleaseToRefreshText = @"松开马上加载更多数据了";tableview.footerRefreshingText = @"正在刷新中...";}-(void)footerRereshing{self.toprefresh = NO;self.page += 1;[self xiaLaSuaXin];dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[tableview footerEndRefreshing];});}
+//#define kguoliSuanXinChuShiHua [self setupRefresh];self.page = 0;
+//#define kguoliSuaXinBianliang @property(nonatomic,assign)BOOL toprefresh ;@property(nonatomic,assign) int page;
+//
+//#define kXiaLaSuaXin(tableview) -(void)setupRefresh{[tableview addFooterWithTarget:self action:@selector(headrRereshingyang)];tableview.footerPullToRefreshText = @"上拉可以加载更多数据了";tableview.footerReleaseToRefreshText = @"松开马上加载更多数据了";tableview.footerRefreshingText = @"正在刷新中...";[tableview addHeaderWithTarget:self action:@selector(footerRereshing)];tableview.headerPullToRefreshText = @"下拉可以加载更多数据了";tableview.headerReleaseToRefreshText = @"松开马上加载更多数据了";tableview.headerRefreshingText = @"正在刷新中...";}-(void)footerRereshing{self.toprefresh = NO;[self shangLaSuaXin];dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[tableview headerEndRefreshing];});}- (void)headrRereshingyang{self.toprefresh = NO;self.page += 1;[self xiaLaSuaXin];dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[tableview footerEndRefreshing];});}
+
+//#define ROOT_Path @"http://182.92.96.58:8004/qitao/"
+//#define Image_Path @"http://182.92.96.58:8004/"
+
+//#define ROOT_Path @"http://192.168.1.235:8080/springmvc"
+//#define ROOT_Path @"http://192.168.1.101:8080/springmvc"
+//#define ROOT_Path @"http://192.168.1.41:8080/springmvc"
+//#define ROOT_Path @"http://192.168.1.45:8080/springmvc"
+//#define ROOT_Path @"http://192.168.1.251:80/mth1"
+//#define ROOT_Path @"http://192.168.1.138:80"
+
+#define ROOT_Path @"http://47.94.255.41:80/xiaoweistudent"
+#define Image_Path @"http://47.94.255.41:80/xiaoweistudent"
+//#define ROOT_Path @"http://124.130.131.94:8087"
+//#define Image_Path @"http://124.130.131.94:8087"//@"http://192.168.1.41:8080/springmvc"//@"http://192.168.1.251:80/mth1"//@"http://192.168.1.101:8080/springmvc"//@"http://192.168.1.138:8080/"//
+
+#define Ver_Address @"http://118.190.47.231"
+
+#define USERID @"USERID"
+#define USERPHONE @"USERPHONE"
+#define USERNAME @"USERNAME"
+#define IsLogin @"IsLogin"
+#define REGITCODE @"REGITCODE"
+#define AutoLogin @"AutoLogin"
+#define AutoUSERPWD @"AutoUSERPWD"
+#define AutoUSERPHONE @"AutoUSERPHONE"
+
+#endif /* EveryDayBenefit_pch */
+
+#if __IPHONE_6_0 // iOS6 and later
+
+#   define kTextAlignmentCenter    NSTextAlignmentCenter
+#   define kTextAlignmentLeft      NSTextAlignmentLeft
+#   define kTextAlignmentRight     NSTextAlignmentRight
+
+#   define kTextLineBreakByWordWrapping      NSLineBreakByWordWrapping
+#   define kTextLineBreakByCharWrapping      NSLineBreakByCharWrapping
+#   define kTextLineBreakByClipping          NSLineBreakByClipping
+#   define kTextLineBreakByTruncatingHead    NSLineBreakByTruncatingHead
+#   define kTextLineBreakByTruncatingTail    NSLineBreakByTruncatingTail
+#   define kTextLineBreakByTruncatingMiddle  NSLineBreakByTruncatingMiddle
+
+#else // older versions
+
+#   define kTextAlignmentCenter    UITextAlignmentCenter
+#   define kTextAlignmentLeft      UITextAlignmentLeft
+#   define kTextAlignmentRight     UITextAlignmentRight
+
+#   define kTextLineBreakByWordWrapping       UILineBreakModeWordWrap
+#   define kTextLineBreakByCharWrapping       UILineBreakModeCharacterWrap
+#   define kTextLineBreakByClipping           UILineBreakModeClip
+#   define kTextLineBreakByTruncatingHead     UILineBreakModeHeadTruncation
+#   define kTextLineBreakByTruncatingTail     UILineBreakModeTailTruncation
+#   define kTextLineBreakByTruncatingMiddle   UILineBreakModeMiddleTruncation
+
+
+#endif /* EveryDayBenefitSale_pch */

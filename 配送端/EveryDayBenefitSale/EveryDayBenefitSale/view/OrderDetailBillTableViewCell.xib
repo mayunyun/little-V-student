@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderDetailBillTableViewCellID" id="KGk-i7-Jjw" customClass="OrderDetailBillTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发票信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOU-pl-7hN">
+                        <rect key="frame" x="8" y="8" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="J6i-re-YHI"/>
+                            <constraint firstAttribute="height" constant="21" id="KSj-2B-wRy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="纸质发票" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHg-uE-kVn">
+                        <rect key="frame" x="104" y="8" width="208" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="NO1-QE-v0a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发票抬头：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFn-2u-9aI">
+                        <rect key="frame" x="8" y="44" width="60" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="17F-aI-NZ5"/>
+                            <constraint firstAttribute="width" constant="60" id="yvj-d4-DN0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发票内容：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0K-eT-yMD">
+                        <rect key="frame" x="8" y="65" width="60" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="krK-Ys-Mtl"/>
+                            <constraint firstAttribute="height" constant="21" id="yvN-6K-zm2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-gK-lSV">
+                        <rect key="frame" x="76" y="44" width="236" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omN-rJ-zub">
+                        <rect key="frame" x="76" y="65" width="236" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iOU-pl-7hN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="08z-ur-y6H"/>
+                    <constraint firstItem="omN-rJ-zub" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="DsM-9f-NFy"/>
+                    <constraint firstItem="VHg-uE-kVn" firstAttribute="leading" secondItem="iOU-pl-7hN" secondAttribute="trailing" constant="21" id="HJm-nD-RUL"/>
+                    <constraint firstItem="wv6-gK-lSV" firstAttribute="top" secondItem="VHg-uE-kVn" secondAttribute="bottom" constant="15" id="IjT-Du-bIr"/>
+                    <constraint firstItem="gFn-2u-9aI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="KDx-N4-jvi"/>
+                    <constraint firstItem="omN-rJ-zub" firstAttribute="height" secondItem="W0K-eT-yMD" secondAttribute="height" id="LgJ-lz-okO"/>
+                    <constraint firstItem="wv6-gK-lSV" firstAttribute="leading" secondItem="gFn-2u-9aI" secondAttribute="trailing" constant="8" id="Lnq-n5-cAp"/>
+                    <constraint firstItem="omN-rJ-zub" firstAttribute="top" secondItem="wv6-gK-lSV" secondAttribute="bottom" id="PWK-X0-Ook"/>
+                    <constraint firstItem="iOU-pl-7hN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Q6X-D8-ppC"/>
+                    <constraint firstItem="wv6-gK-lSV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="QNa-Xz-86J"/>
+                    <constraint firstItem="VHg-uE-kVn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="X72-di-8XB"/>
+                    <constraint firstItem="gFn-2u-9aI" firstAttribute="top" secondItem="iOU-pl-7hN" secondAttribute="bottom" constant="15" id="X8q-Z6-74R"/>
+                    <constraint firstItem="wv6-gK-lSV" firstAttribute="height" secondItem="gFn-2u-9aI" secondAttribute="height" id="Ypy-fq-IIk"/>
+                    <constraint firstItem="W0K-eT-yMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="azN-fj-cPU"/>
+                    <constraint firstItem="VHg-uE-kVn" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="m66-px-b3f"/>
+                    <constraint firstItem="omN-rJ-zub" firstAttribute="leading" secondItem="W0K-eT-yMD" secondAttribute="trailing" constant="8" id="mZi-Ck-tAC"/>
+                    <constraint firstItem="W0K-eT-yMD" firstAttribute="top" secondItem="gFn-2u-9aI" secondAttribute="bottom" id="qYf-sj-h6k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="billConLabel" destination="omN-rJ-zub" id="2Ch-lY-ewD"/>
+                <outlet property="billHeadLabel" destination="wv6-gK-lSV" id="unN-VN-NNZ"/>
+                <outlet property="billTypeLabel" destination="VHg-uE-kVn" id="35R-vM-Cgk"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
